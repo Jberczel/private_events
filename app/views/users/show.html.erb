@@ -13,9 +13,29 @@
 <br>
 <%= @user.email %>
 
+<h2>Created Events</h2>
 <% @user.events.each do |event| %>
   <p> Location: <%= event.location %> </p>
   <p> Description: <%= event.description %> </p>
- 
+
+<% end %>
+
+<h2>Upcoming Events</h2>
+<p><%= @user.name %> is attending:</p>
+
+<% @upcoming_events.each do |event| %>
+  <p> Location: <%= event.location %> </p>
+  <p> Description: <%= event.description %> </p>
+  <p> Date: <%= event.date %> </p>
+
+<% end %>
+
+<h2>Previous Events</h2>
+<p><%= @user.name %> attended:</p>
+
+<% @previous_events.each do |event| %>
+  <p> Location: <%= event.location %> </p>
+  <p> Description: <%= event.description %> </p>
+  <p> Date: <%= event.date %> </p>
 
 <% end %>

@@ -1,1 +1,15 @@
 <h1>Event Details</h1>
+
+<p>LOCATION:</p>
+<p><%= @event.location %></p> 
+
+</br>
+
+  <b>Attending:</b>
+
+  <ul>
+  <% @event.attendees.each do |attendee| %>
+     <li><%= attendee.name %></li>
+
+  <% end %>
+  </ul>
