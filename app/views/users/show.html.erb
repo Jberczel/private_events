@@ -1,0 +1,21 @@
+<% if signed_in? %>
+  (Logged in: <%= current_user.name %>)
+  <%= link_to "Sign Out", signout_path, method: "delete" %>
+<% else %>
+  <%= link_to "Sign In", signin_path %>
+<% end %>
+
+
+<h1>User Profile</h1>
+
+
+<%= @user.name %>
+<br>
+<%= @user.email %>
+
+<% @user.events.each do |event| %>
+  <p> Location: <%= event.location %> </p>
+  <p> Description: <%= event.description %> </p>
+ 
+
+<% end %>
