@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
   before_create :create_remember_token
 
   def upcoming_events
-    self.events.where("date >= ?", Date.today)
+    self.events.upcoming
   end
 
   def previous_events
-    self.events.where("date < ?", Date.today)
+    self.events.past
   end
 
   def User.new_remember_token

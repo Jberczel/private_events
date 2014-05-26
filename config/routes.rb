@@ -1,5 +1,5 @@
 PrivateEvents::Application.routes.draw do
-    resources :users, only: [:new, :create, :show]
+    resources :users, only: [:new, :create, :show, :index]
     match '/signup',  to: 'users#new',            via: 'get'
 
     resources :sessions, only: [:new, :create, :destroy]

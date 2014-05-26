@@ -1,6 +1,22 @@
 <h1>Latest Events</h1>
 
-<% @events.each do |event| %>
+<h2>upcoming</h2>
+<% @events.upcoming.each do |event| %>
+
+<p>Location:
+  <%= event.location %>
+
+</p>
+
+<p>Description: <%= event.description %> </p>
+<p>Date: <%= event.date %> </p>
+ <p>Created by: <%= event.creator.name %> </p>
+
+
+<% end %>
+
+<h2>past</h2>
+<% @events.past.each do |event| %>
 
 <p>Location:
   <%= event.location %>

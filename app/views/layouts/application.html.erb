@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<% if signed_in? %>
+  (Logged in: <%= current_user.name %>)
+  <%= link_to "Sign Out", signout_path, method: "delete" %>
+<% else %>
+  <%= link_to "Sign In", signin_path %>
+<% end %>
+
+<%= link_to "Events", events_path %>
+<%= link_to "Users", users_path %>
+
+
 <%= yield %>
 
 </body>
