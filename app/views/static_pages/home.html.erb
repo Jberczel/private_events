@@ -1,0 +1,14 @@
+<% if signed_in? %>
+
+  <%= render 'static_pages/user_home' %>
+
+<% else %>
+
+  <div class="jumbotron">
+    <h1>Plan an Event</h1>
+    <p class="lead">Keep track of events with your friends.  This is a simple app to organize your event planning.
+       </p>
+    <p><%= link_to "Create an Event", signup_path, class: "btn btn-lg btn-success" %></p>
+  </div>
+
+<% end %>

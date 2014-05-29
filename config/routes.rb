@@ -1,12 +1,22 @@
 PrivateEvents::Application.routes.draw do
-    resources :users, only: [:new, :create, :show, :index]
-    match '/signup',  to: 'users#new',            via: 'get'
 
-    resources :sessions, only: [:new, :create, :destroy]
-    match '/signin',  to: 'sessions#new',         via: 'get'
-    match '/signout', to: 'sessions#destroy',     via: 'delete'
+  root 'static_pages#home'
+  match '/about', to: 'static_pages#about',     via: 'get'
 
-    resources :events, only: [:new, :create, :show, :index]
+
+  resources :users, only: [:new, :create, :show, :index]
+  match '/signup',  to: 'users#new',            via: 'get'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+
+  resources :events, only: [:new, :create, :show, :index]
+
+  get "invites/create"
+  get "invites/destroy"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

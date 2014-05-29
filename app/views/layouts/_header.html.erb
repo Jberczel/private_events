@@ -1,0 +1,14 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><%= nav_link "Home", root_path %></li>
+    <li><%= nav_link "Events", events_path %></li>
+    <li><%= nav_link "Users", users_path %></li>
+    <li><%= nav_link "About", about_path %></li>
+    <% if signed_in? %>
+      <li><%= link_to "#{current_user.name} (Sign Out)", signout_path, method: "delete" %></li>
+    <% else %>
+      <li><%= link_to "Sign In", signin_path %></li>
+    <% end %>
+  </ul>
+  <h3 class="text-muted">Private EventBrite</h3>
+</div>

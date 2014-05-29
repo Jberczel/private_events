@@ -8,18 +8,13 @@
 </head>
 <body>
 
-<% if signed_in? %>
-  (Logged in: <%= current_user.name %>)
-  <%= link_to "Sign Out", signout_path, method: "delete" %>
-<% else %>
-  <%= link_to "Sign In", signin_path %>
-<% end %>
-
-<%= link_to "Events", events_path %>
-<%= link_to "Users", users_path %>
-
-
-<%= yield %>
+  <div class="container">
+    <%= render 'layouts/header' %>
+    <%= yield %>
+    <div class="footer">
+      <p>An event planning application, by <a href="https://twitter.com/Jberczel">@jberczel</a>.</p>
+    </div>
+  </div> <!-- /container -->
 
 </body>
 </html>

@@ -1,11 +1,18 @@
 <h1>Sign In</h1>
 
-<%= form_for(:session, url: sessions_path) do |f| %>
+<%= bootstrap_form_for(:session, url: sessions_path, layout: :horizontal) do |f| %>
 
-      <%= f.label :email %>
       <%= f.text_field :email %>
 
+      
+
+  <%= f.form_group do %>
       <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+  <% end %>
+
+    <%= f.form_group do %>
+       <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  <% end %>
 <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    

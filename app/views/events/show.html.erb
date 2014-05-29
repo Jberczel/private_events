@@ -1,15 +1,24 @@
-<h1>Event Details</h1>
+<h1><%= @event.title %></h1>
 
-<p>LOCATION:</p>
-<p><%= @event.location %></p> 
+<% if host?(@event.creator) %>
+<div class="text-center">
+<%= link_to "Invite Friends", "#", class: "btn btn-success" %>
+</div>
+<% end %>
+
+<p><b>Location: </b><%= @event.location %></p> 
+<p><b>Host: </b><%= @event.creator.name %></p>
+
+<p><%= @event.description %></p>
 
 </br>
 
-  <b>Attending:</b>
+<b>Who's Going:</b>
 
-  <ul>
-  <% @event.attendees.each do |attendee| %>
-     <li><%= attendee.name %></li>
+<ol>
+<% @event.attendees.each do |attendee| %>
+   <li><%= link_to attendee.name, attendee %></li>
 
-  <% end %>
-  </ul>
+<% end %>
+</ol>
+

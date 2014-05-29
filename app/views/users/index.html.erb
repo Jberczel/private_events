@@ -1,7 +1,8 @@
 <h1>All Users</h1>
-
+<ul class="users">
 <% @users.each do |user| %>
 
-  <p><%= link_to user.name, user %></p>
+  <li><%= link_to user.name, user %></li>
 
   <% end %>
+</ul>

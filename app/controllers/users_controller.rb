@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
      @user = User.new(user_params)
     if @user.save
-      sign_in user
+      sign_in @user
       redirect_to @user
     else
       render 'new'
@@ -16,8 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @previous_events = current_user.previous_events
-    @upcoming_events = current_user.upcoming_events
+    @previous_events = @user.previous_events
+    @upcoming_events = @user.upcoming_events
 
   end
 

@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
   before_create :create_remember_token
 
   def upcoming_events
-    self.events.upcoming
+    self.attended_events.upcoming
   end
 
   def previous_events
-    self.events.past
+    self.attended_events.past
   end
 
   def User.new_remember_token

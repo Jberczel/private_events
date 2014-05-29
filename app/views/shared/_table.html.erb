@@ -1,0 +1,19 @@
+<table class="table table-condensed">   
+  <thead>
+    <tr>
+      <td class="col-sm-2">Date</td>
+      <td class="col-sm-5">Title</td>
+      <td class="col-sm-3">Location</td>
+      <td class="col-sm-2">Host</td>
+    </tr>
+  </thead>
+
+  <% object.each do |event| %>
+  <tr>
+    <td><%= event.date %></td>
+    <td><%= link_to event.title, event_path(event) %></td>
+    <td><%= event.location %></td>
+    <td><%= event.creator.name %></td>
+  </tr>
+  <% end %>   
+</table>

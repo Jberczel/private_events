@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523203605) do
+ActiveRecord::Schema.define(version: 20140526130242) do
 
   create_table "events", force: true do |t|
     t.string   "location"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140523203605) do
     t.datetime "updated_at"
     t.integer  "creator_id"
     t.text     "description"
+    t.string   "title"
   end
 
   add_index "events", ["creator_id"], name: "index_events_on_creator_id"
