@@ -6,16 +6,16 @@
 </div>
 
 <% if @upcoming_events.any? %>
-<h2>Upcoming:</h2>
+<h2>Upcoming</h2>
 <%= render 'shared/table', object: @upcoming_events %>
 <% end %>
 
 <% if @previous_events.any? %>
-<h2>You Attended:</h2>
+<h2>Attended</h2>
 <%= render 'shared/table', object: @previous_events %>
 <% end %>
 
 <% if @user.events.any? %>
-<h2>My Events:</h2>
+<h2>My Events</h2>
 <%= render 'shared/table', object: @user.events %>
 <% end %>

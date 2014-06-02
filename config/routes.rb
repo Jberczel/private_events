@@ -13,8 +13,8 @@ PrivateEvents::Application.routes.draw do
 
   resources :events, only: [:new, :create, :show, :index]
 
-  get "invites/create"
-  get "invites/destroy"
+
+  resources :invites, only: [:create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

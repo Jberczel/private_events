@@ -1,0 +1,9 @@
+
+<div id="attend_form">
+<% if current_user.attending?(@event) %> 
+  <%= render 'cancel' %>
+<% else %>
+  <%= render 'attend' %>
+<% end %>
+</div>
+

@@ -23,6 +23,18 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def attending?(event)
+    event.attendees.include?(self)
+  end
+
+  def attend!(event)
+    self.invites.create!(attended_event_id: event.id)
+  end
+
+  def cancel!(event)
+    self.invites.find_by(attended_event_id: event.id).destroy
+  end
+
   private
 
     def create_remember_token

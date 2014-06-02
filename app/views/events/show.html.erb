@@ -1,9 +1,8 @@
 <h1><%= @event.title %></h1>
 
-<% if host?(@event.creator) %>
-<div class="text-center">
-<%= link_to "Invite Friends", "#", class: "btn btn-success" %>
-</div>
+
+<% if signed_in? %>
+<div class="text-center"><%= render 'attend_form' %></div>
 <% end %>
 
 <p><b>Location: </b><%= @event.location %></p> 
